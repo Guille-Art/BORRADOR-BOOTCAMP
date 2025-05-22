@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gráficos - IA en Educación</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">IA en Edu</a>
+    <ul>
+      <li><a href="index.html">Información</a></li>
+      <li><a href="index.html">Novedades</a></li>
+      <li><a href="graficos.html">Gráficos</a></li>
+      <li><a href="videos.html">Videos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="chart-container" aria-label="Gráficos de IA en educación">
+    <h2 class="section-title">Tendencias de IA en la Educación</h2>
+    <p class="lead">Visualiza las tendencias en adopción, mejora en resultados y participación de estudiantes gracias a la inteligencia artificial.</p>
+    
+    <div class="chart-block">
+      <h3>Adopción de IA en Instituciones Educativas (%)</h3>
+      <canvas id="adopcionChart" aria-label="Gráfico de barras sobre adopción de IA" role="img"></canvas>
+    </div>
+
+    <div class="chart-block">
+      <h3>Mejora en Resultados Académicos (%)</h3>
+      <canvas id="mejoraChart" aria-label="Gráfico circular sobre mejora en resultados académicos" role="img"></canvas>
+    </div>
+
+    <div class="chart-block">
+      <h3>Aumento de Participación Estudiantil (%)</h3>
+      <canvas id="participacionChart" aria-label="Gráfico de líneas sobre aumento de participación estudiantil" role="img"></canvas>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 IA en Educación. Creado con pasión y tecnología de vanguardia.
+</footer>
+
+<script>
+  fetch('datos.json')
+    .then(response => response.json())
+    .then(data => {
+      // Gráfico de barras - adopción
+      const ctxAdopcion = document.getElementById('adopcionChart').getContext('2d');
+      new Chart(ctxAdopcion, {
+        type: 'bar',
+        data: {
+          labels: data.labels,
+          datasets: [{
+            label: 'Adopción de IA (%)',
+            data: data.adopcion,
+            backgroundColor: 'rgba(0, 149, 218, 0.7)'
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: { beginAtZero: true, max: 100, ticks: { color: '#ccc' } },
+            x: { ticks: { color: '#ccc' } }
+          },
+          plugins: {
+            legend: { labels: { color: '#00e5ff' } },
+            tooltip: { enabled: true }
+          }
+        }
+      });
+
+      // Gráfico circular
+      const ctxMejora = document.getElementById('mejoraChart').getContext('2d');
+      new Chart(ctxMejora, {
+        type: 'doughnut',
+        data: {
+          labels: ['Mejora con IA', 'Sin IA'],
+          datasets: [{
+            label: 'Mejora en resultados académicos (%)',
+            data: [Math.max(...data.mejora), 100 - Math.max(...data.mejora)],
+            backgroundColor: ['rgba(0, 149, 218, 0.7)', 'rgba(32, 58, 67, 0.7)']
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: 'bottom', labels: { color: '#00e5ff' } },
+            tooltip: { enabled: true }
+          }
+        }
+      });
+
+      // Gráfico de líneas - participación
+      const ctxParticipacion = document.getElementById('participacionChart').getContext('2d');
+      new Chart(ctxParticipacion, {
+        type: 'line',
+        data: {
+          labels: data.labels,
+          datasets: [{
+            label: 'Participación estudiantil (%)',
+            data: data.participacion,
+            borderColor: 'rgba(0, 149, 218, 0.9)',
+            backgroundColor: 'rgba(0, 149, 218, 0.4)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 5
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: { beginAtZero: true, max: 100, ticks: { color: '#ccc' } },
+            x: { ticks: { color: '#ccc' } }
+          },
+          plugins: {
+            legend: { labels: { color: '#00e5ff' } },
+            tooltip: { enabled: true }
+          }
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Error cargando datos JSON:', error);
+      alert('No se pudieron cargar los datos para los gráficos.');
+    });
+</script>
+
+</body>
+</html>
