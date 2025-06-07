@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Estadística Mundial de IA</title>
+    <link rel="stylesheet" href="Graficos.css">
+ 
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" style="background: #444; color: #fff; border: none; padding: 3px 16px; border-radius: 4px; font-size: 1em; cursor: pointer; text-decoration: none;">Graficos</a>
+            <ul>
+                <li><a href="#global">Estadísticas Globales</a></li>
+                <li><a href="#educacion">Estadísticas Educación</a></li>
+                <li><a href="#salud">Estadísticas Salud</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main style="margin-top: 4cm;"></main>
+         <h1>La Inteligencia Artificial Estadísticamente</h1>
+          <div class="grafico-contenedor">
+            <h2>¿Cómo utilizas la IA?</h2>
+            <img src="Img/ia.compas.webp" alt="IA educando en el mundo" width="300" height="150">
+            <section>
+                <h3>📊 Estadísticas sobre Inteligencia Artificial (IA) en 2025</h3>
+                <p>
+                    La inteligencia artificial (IA) ha evolucionado significativamente desde su conceptualización en 1956 por John McCarthy. Hoy, su impacto es global y abarca múltiples sectores. 
+                    <br><br>
+                    <strong>¿Sabías que...?</strong> La IA no solo automatiza tareas, sino que también ayuda a descubrir patrones en grandes volúmenes de datos, lo que permite avances en medicina, educación, negocios y más.
+                </p>
+                <ul>
+                    <li>La información está dividida por áreas temáticas para un acceso más rápido.</li>
+                    <li>Cada dato relevante está acompañado de su fuente de referencia.</li>
+                    <li>Se incluyen cifras recientes sobre el impacto de la IA en el mercado y la sociedad.</li>
+                </ul>
+            </section>
+            <img src="Img/IA en Estadísticas G.png" alt="Estadística IA" width="400" height="400">
+            <p>
+                La IA está transformando industrias, mejorando la eficiencia y abriendo nuevas oportunidades en educación, salud, negocios y más.
+                <br>
+                <em>Dato libre:</em> Según estudios recientes, el 85% de las empresas líderes consideran la IA como una prioridad estratégica para los próximos años.
+            </p>
+
+            <!-- Estadísticas Globales de IA -->
+            <section id="global">
+                <h3>📈 Estadísticas Globales de IA</h3>
+                <button class="boton-seccion" onclick="toggleSeccion('global')">Estadísticas Globales</button>
+                <div id="contenido-global" class="seccion-contenido">
+                    <ul>
+                        <li>El mercado global de IA se estima que alcanzará los <strong>190 mil millones de dólares</strong> en 2025. <em>(Fuente: MarketsandMarkets)</em></li>
+                        <li>Se prevé que la IA genere <strong>97 millones de nuevos empleos</strong> en todo el mundo para 2025. <em>(Fuente: World Economic Forum)</em></li>
+                        <li>El <strong>75%</strong> de las empresas integrarán IA en sus procesos y servicios para 2025. <em>(Fuente: Gartner)</em></li>
+                        <li>El <strong>61%</strong> de los adultos ya utilizan productos o servicios con IA diariamente. <em>(Fuente: PwC)</em></li>
+                    </ul>
+                    <canvas id="graficoGlobal" width="400" height="250"></canvas>
+                </div>
+            </section>
+
+            <!-- Estadísticas de IA en Educación -->
+            <section id="educacion">
+                <h3>📊 Estadísticas de IA en Educación</h3>
+                <button class="boton-seccion" onclick="toggleSeccion('educacion')">Estadísticas Educación</button>
+                <div id="contenido-educacion" class="seccion-contenido">
+                    <ul>
+                        <li>El uso de IA en educación se espera que crezca un <strong>47%</strong> anual hasta 2025. <em>(Fuente: HolonIQ)</em></li>
+                        <li>El <strong>30%</strong> de las instituciones educativas ya utilizan IA para personalizar la experiencia de aprendizaje. <em>(Fuente: McKinsey)</em></li>
+                        <li>Se estima que el mercado de IA en educación alcanzará los <strong>6 mil millones de dólares</strong> en 2025. <em>(Fuente: ResearchAndMarkets)</em></li>
+                        <li>El <strong>50%</strong> de los estudiantes cree que la IA mejorará su experiencia educativa. <em>(Fuente: Pearson)</em></li>
+                    </ul>
+                    <canvas id="graficoEducacion" width="400" height="250"></canvas>
+                </div>
+            </section>
+
+            <!-- Estadísticas de IA en Salud -->
+            <section id="salud">
+                <h3>📉 Estadísticas de IA en Salud</h3>
+                <button class="boton-seccion" onclick="toggleSeccion('salud')">Estadísticas Salud</button>
+                <div id="contenido-salud" class="seccion-contenido">
+                    <ul>
+                        <li>El mercado de IA en salud alcanzará los <strong>36 mil millones de dólares</strong> en 2025. <em>(Fuente: Fortune Business Insights)</em></li>
+                        <li>El uso de IA en diagnósticos médicos se espera que crezca un <strong>40%</strong> anual hasta 2025. <em>(Fuente: Frost & Sullivan)</em></li>
+                        <li>El <strong>50%</strong> de los hospitales ya utilizan IA para optimizar procesos y mejorar la atención. <em>(Fuente: Deloitte)</em></li>
+                        <li>El <strong>70%</strong> de los médicos cree que la IA mejorará la atención al paciente. <em>(Fuente: Accenture)</em></li>
+                        <li>La IA puede reducir los costos de atención médica en un <strong>50%</strong>. <em>(Fuente: Deloitte)</em></li>
+                        <li>El <strong>80%</strong> de los datos de salud son no estructurados, lo que limita su análisis. <em>(Fuente: IBM)</em></li>
+                    </ul>
+                    <canvas id="graficoSalud" width="400" height="250"></canvas>
+                </div>
+            </section>
+        </div>
+
+        <section class="graficos-contenedor">
+            <p>
+                La IA está revolucionando la educación, ofreciendo herramientas personalizadas y mejorando la experiencia de aprendizaje.
+                <br>
+                <em>Dato libre:</em> En el futuro, se espera que la IA ayude a reducir la brecha educativa en regiones con menos acceso a recursos tradicionales.
+            </p>
+        </section>
+    </main>
+
+    <footer id="pie">
+        <p>© 2023 Estadísticas Globales IA. Todos los derechos reservados.</p>
+        <p>Desarrollado por TALENTO TECH</p>
+    </footer>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    // Control de despliegue de secciones y gráficos
+    let charts = {};
+
+    function toggleSeccion(seccion) {
+        const contenido = document.getElementById('contenido-' + seccion);
+        const canvasId = {
+            global: 'graficoGlobal',
+            educacion: 'graficoEducacion',
+            salud: 'graficoSalud'
+        }[seccion];
+
+        if (contenido.classList.contains('mostrar')) {
+            contenido.classList.remove('mostrar');
+            if (charts[canvasId]) {
+                charts[canvasId].destroy();
+                charts[canvasId] = null;
+            }
+        } else {
+            contenido.classList.add('mostrar');
+            if (!charts[canvasId]) {
+                if (canvasId === 'graficoGlobal') {
+                    charts[canvasId] = new Chart(document.getElementById(canvasId), {
+                        type: 'bar',
+                        data: {
+                            labels: ['Mercado (USD)', 'Empleos', 'Empresas', 'Usuarios'],
+                            datasets: [{
+                                label: 'Estadísticas Globales IA',
+                                data: [190, 97, 75, 61],
+                                backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e']
+                            }]
+                        },
+                        options: { responsive: false }
+                    });
+                }
+                if (canvasId === 'graficoEducacion') {
+                    charts[canvasId] = new Chart(document.getElementById(canvasId), {
+                        type: 'bar',
+                        data: {
+                            labels: ['Crecimiento (%)', 'Instituciones (%)', 'Mercado (USD)', 'Estudiantes (%)'],
+                            datasets: [{
+                                label: 'IA en Educación',
+                                data: [47, 30, 6, 50],
+                                backgroundColor: ['#e74a3b', '#858796', '#f6c23e', '#36b9cc']
+                            }]
+                        },
+                        options: { responsive: false }
+                    });
+                }
+                if (canvasId === 'graficoSalud') {
+                    charts[canvasId] = new Chart(document.getElementById(canvasId), {
+                        type: 'bar',
+                        data: {
+                            labels: ['Mercado (USD)', 'Diagnóstico (%)', 'Hospitales (%)', 'Médicos (%)', 'Costos (%)', 'Datos no estructurados (%)'],
+                            datasets: [{
+                                label: 'IA en Salud',
+                                data: [36, 40, 50, 70, 50, 80],
+                                backgroundColor: ['#1cc88a', '#4e73df', '#e74a3b', '#f6c23e', '#858796', '#36b9cc']
+                            }]
+                        },
+                        options: { responsive: false }
+                    });
+                }
+            }
+        }
+    }
+    </script>
+</body>
+</html>
